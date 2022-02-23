@@ -5,7 +5,7 @@ from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm
 from django.shortcuts import redirect
 from django.urls import reverse
-
+from django.conf.urls import url
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
@@ -13,7 +13,8 @@ def index(request):
     context_dict['boldmessage'] ='Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
-    return render(request,'rango/index.html', context=context_dict)
+    # return render(request,'rango/index.html', context=context_dict)
+    return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
     return render(request,'rango/about.html')
