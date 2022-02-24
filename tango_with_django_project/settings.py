@@ -135,4 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 
