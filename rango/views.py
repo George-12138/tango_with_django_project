@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 def index(request):
-    category_list = Category.objects.order_by('-likes')[:]
+    category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
     context_dict = {}
     context_dict['boldmessage'] ='Crunchy, creamy, cookie, candy, cupcake!'
